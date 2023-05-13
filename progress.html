@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Progress</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed&display=swap" rel="stylesheet">
+    <style>
+        
+    
+body {
+	background-image: url('./images/background.jpg');
+	margin:0;
+	font-family: 'Roboto Condensed', sans-serif;
+}
+
+ 
+h1 {
+	 	  
+	color:#f0eeee;
+	font-weight:700;
+	margin-top:125px;	 
+	text-align:center;
+	text-transform:uppercase;
+	letter-spacing:4px;
+	line-height:23px;
+}
+
+/* --- Start progress bar --- */
+
+.process-wrapper {
+	margin:auto;
+	max-width:1080px;
+}
+
+#progress-bar-container {
+	position:relative;
+	width:90%;
+	margin:auto;
+	height:100px;
+	margin-top:65px;
+}
+
+#progress-bar-container ul {
+	padding:0;
+	margin:0;
+	padding-top:15px;
+	z-index:9999;
+	position:absolute;
+	width:100%;
+	margin-top:-40px
+}
+
+#progress-bar-container li:before {
+	content:" ";
+	display:block;
+	margin:auto;
+	width:30px;
+	height:30px;
+	border-radius:50%;
+	border:solid 2px #aaa;
+	transition:all ease 0.3s;
+     
+}
+
+#progress-bar-container li.active:before, #progress-bar-container li:hover:before {
+	border:solid 2px #fff;
+       	 
+	background: linear-gradient(to right, #E91E63 0%,#fff 100%); 
+}
+
+#progress-bar-container li {
+	list-style:none;
+	float:left;
+	width:20%;
+	text-align:center;
+	color:#aaa;
+	text-transform:uppercase;
+	font-size:11px;
+	cursor:pointer;
+	font-weight:700;
+	transition:all ease 0.2s;
+	vertical-align:bottom;
+	height:60px;
+	position:relative;
+}
+
+#progress-bar-container li .step-inner {
+	position:absolute;
+	width:100%;
+	bottom:0;
+    font-size: 14px;
+}
+
+#progress-bar-container li.active, #progress-bar-container li:hover {
+	color:#da1a1a;
+}
+
+#progress-bar-container li:after {
+	content:" ";
+	display:block;
+	width:6px;
+	height:6px;
+	background:#f30404;
+	margin:auto;
+	border:solid 7px #fff;
+	border-radius:50%;
+	margin-top:40px;
+	box-shadow:0 2px 13px -1px rgba(0,0,0,0.3);
+	transition:all ease 0.2s;
+     
+}
+
+#progress-bar-container li:hover:after {
+	background:#e51717;
+}
+
+#progress-bar-container li.active:after {
+	background:#5500ff;
+}
+
+#progress-bar-container #line {
+	width:80%;
+	margin:auto;
+	background: #eee;
+	height:6px;
+	position:absolute;
+	left:10%;
+	top:57px;
+	z-index:1;
+	border-radius:50px;
+	transition:all ease 0.9s;
+}
+
+#progress-bar-container #line-progress {
+	content:" ";
+	width:3%;
+	height:100%;
+	background: #b7f400;	 
+	background: linear-gradient(to right, #84f107 0%,#0ae632 100%); 
+	position:absolute;
+	z-index:2;
+	border-radius:50px;
+	transition:all ease 0.9s;
+}
+
+#progress-content-section {
+	width:90%;
+	margin: auto;
+	background: #f3f3f3;
+	border-radius: 4px;
+}
+
+#progress-content-section .section-content {
+	padding:30px 40px;
+	text-align:center;
+}
+
+#progress-content-section .section-content h2 {
+	font-size:17px;
+	text-transform:uppercase;
+	color:#333;
+	letter-spacing:1px;
+}
+
+#progress-content-section .section-content p {
+	font-size:16px;
+	line-height:1.8em;
+	color:#777;
+}
+
+#progress-content-section .section-content {
+	display:none;
+	animation: FadeInUp 700ms ease 1;
+	animation-fill-mode:forwards;
+	transform:translateY(15px);
+	opacity:0;
+}
+
+#progress-content-section .section-content.active {
+	display:block;
+}
+
+@keyframes FadeInUp {
+	0% {
+		transform:translateY(15px);
+		opacity:0;
+	}
+	
+	100% {
+		transform:translateY(0px);
+		opacity:1;
+	}
+}
+
+ 
+    </style>
+</head>
+<body>
+ 
+
+<h1>My Education and Projects</h1>
+<br> 
+<div class="process-wrapper">
+<div id="progress-bar-container">
+	<ul>
+		<li class="step step01 active"><div class="step-inner">Higher Secondary</div></li>
+		<li class="step step02"><div class="step-inner">Senior Secondary</div></li>
+		<li class="step step03"><div class="step-inner">Under Graduate</div></li>
+		<li class="step step04"><div class="step-inner">Completed Projects</div></li>
+		<li class="step step05"><div class="step-inner">Ongoing Project</div></li>
+	</ul>
+	
+	<div id="line">
+		<div id="line-progress"></div>
+	</div>
+</div>
+
+<div id="progress-content-section">
+	<div class="section-content discovery active">
+		<h2>2018</h2>
+		<p>During my 10th-grade education at Kuwait Indian Community School, CBSE, I experienced a transformative learning journey that significantly contributed to my personal and academic growth. This esteemed institution provided a conducive environment for intellectual development and character building. The CBSE curriculum equipped me with a strong foundation in core subjects, fostering critical thinking, problem-solving skills, and a deep understanding of various disciplines. The school's dedicated faculty played a pivotal role in nurturing my intellectual curiosity, encouraging active participation, and providing individualized support. The diverse student community fostered a multicultural atmosphere that enriched my perspectives and enhanced my social skills. Engaging in extracurricular activities such as debates, quizzes, and cultural events helped me develop leadership qualities and instilled a sense of teamwork. Overall, my 10th-grade education at Kuwait Indian Community School, CBSE, provided me with an exceptional academic foundation and invaluable life skills that will undoubtedly shape my future endeavors positively.</p>
+	</div>
+	
+	<div class="section-content strategy">
+		<h2>2020</h2>
+		<p>During my 12th-grade education at Coimbatore Sree Sarasswathi Vidhyaa Mandheer, I pursued the CBSE curriculum, and it proved to be a pivotal phase that propelled my academic and personal growth. This esteemed institution provided a nurturing and intellectually stimulating environment, fostering a strong foundation for my educational pursuits. The CBSE curriculum offered a comprehensive and rigorous academic framework, equipping me with a deep understanding of diverse subjects and cultivating critical thinking and analytical skills. The faculty at Coimbatore Sree Sarasswathi Vidhyaa Mandheer played an instrumental role in my academic journey, demonstrating unwavering commitment, expertise, and mentorship. Their guidance and support nurtured my intellectual curiosity and fostered a spirit of inquiry. Alongside the pursuit of academic excellence, the school actively encouraged participation in extracurricular activities, such as sports, cultural events, and community service, promoting holistic development and honing leadership abilities. The exceptional learning environment and the strong sense of community at Coimbatore Sree Sarasswathi Vidhyaa Mandheer have undoubtedly shaped my character and prepared me for future endeavors. My 12th-grade education in this institution stands as a testament to my commitment to academic excellence and personal growth.</p>
+	</div>
+	
+	<div class="section-content creative">
+		<h2>2024</h2>
+		<p>Currently pursuing my undergraduate degree in B.Tech Information Technology at Coimbatore Institute of Technology, Coimbatore, I am immersed in a comprehensive and dynamic academic program that equips me with the necessary knowledge and skills to excel in the field. The institution's esteemed reputation for technical education and research excellence has provided me with a platform to thrive. The curriculum delves deep into the core concepts of Information Technology, covering areas such as programming, database management, network administration, and cybersecurity. The dedicated faculty members, who are experts in their respective fields, consistently challenge and inspire me to expand my intellectual horizons. The state-of-the-art facilities and well-equipped laboratories allow for practical application and hands-on experience, enabling me to bridge the gap between theory and practice. Furthermore, the college fosters a culture of innovation and collaboration, encouraging participation in technical competitions, workshops, and research projects. As I progress towards completing my undergraduate degree in 2024, I am confident that the rigorous academic training and holistic learning environment at Coimbatore Institute of Technology will lay a solid foundation for a successful career in the field of Information Technology.</p>
+	</div>
+	
+	<div class="section-content production">
+		<h2>Competed Projects</h2>
+		<p>Throughout my academic journey, I have undertaken several notable projects that have allowed me to showcase my technical expertise and problem-solving abilities. One of my significant projects involved learning game development using Swift iOS language. This endeavor enabled me to delve into the world of game design, exploring various concepts, such as graphics rendering, user interaction, and game mechanics. By implementing my knowledge of Swift, I successfully developed an engaging and interactive game prototype.</p>
+		<p>In addition, I had the opportunity to create a material management application for Aman Exchange in Kuwait. This project demanded proficiency in HTML, CSS, Vue.js, and Flask. Collaborating closely with the organization, I developed a robust and user-friendly application that streamlined the material management processes, improving efficiency and reducing errors. The application facilitated seamless tracking of inventory, order management, and reporting, providing valuable insights for decision-making.</p>
+		<p>Furthermore, as part of my college mini project, I undertook the development of a No Due Automation form. This web-based application aimed to simplify the process for students to pay due fees from their phones or laptops. Employing HTML, CSS, JavaScript, and Node.js, I created an intuitive and secure platform that allowed students to view their outstanding dues, make payments, and generate receipts seamlessly. This project showcased my proficiency in web development and emphasized my ability to design efficient and user-friendly interfaces.</p>
+		<p>These projects collectively highlight my versatility and technical acumen across various domains of software development. They have not only enhanced my programming skills but also reinforced my ability to conceptualize, plan, and execute projects successfully. Moving forward, I am excited to continue honing my skills and taking on new challenges in the ever-evolving field of technology.</p>
+	</div>
+	
+	<div class="section-content analysis">
+		<h2>Ongoing Projects</h2>
+		<p>Yet to be Updated!! (Currently Brain Storming)
+	</div>
+	</div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+ <script>
+    
+    $(".step").click( function() {
+	$(this).addClass("active").prevAll().addClass("active");
+	$(this).nextAll().removeClass("active");
+});
+
+$(".step01").click( function() {
+	$("#line-progress").css("width", "3%");
+	$(".discovery").addClass("active").siblings().removeClass("active");
+});
+
+$(".step02").click( function() {
+	$("#line-progress").css("width", "25%");
+	$(".strategy").addClass("active").siblings().removeClass("active");
+});
+
+$(".step03").click( function() {
+	$("#line-progress").css("width", "50%");
+	$(".creative").addClass("active").siblings().removeClass("active");
+});
+
+$(".step04").click( function() {
+	$("#line-progress").css("width", "75%");
+	$(".production").addClass("active").siblings().removeClass("active");
+});
+
+$(".step05").click( function() {
+	$("#line-progress").css("width", "100%");
+	$(".analysis").addClass("active").siblings().removeClass("active");
+});
+
+ 
+    </script>
+</body>
+</html>

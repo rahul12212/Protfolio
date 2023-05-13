@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Loading Screen</title>
+  <style>
+    /* CSS for the loading screen */
+    body {
+      background-image: url('./images/loading.jpg');
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      animation: heartbeat 1s infinite ease-in-out;
+      animation-delay: 0s;
+    }
+    
+    .logo {
+      width: 25em;
+      height: 25em;
+      fill: url(#logo-gradient);
+      animation: colorShift 1s infinite;
+    }
+
+    @keyframes heartbeat {
+      0% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.2);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    @keyframes colorShift {
+      0%, 25% {
+        stop-color: #FF00FF; /* Magenta */
+      }
+      25%, 50% {
+        stop-color: #00FFFF; /* Cyan */
+      }
+      50%, 75% {
+        stop-color: #FFFF00; /* Yellow */
+      }
+      75%, 100% {
+        stop-color: #FF0000; /* Red */
+      }
+    }
+  </style>
+  <script>
+    // JavaScript to update gradient stops
+    function updateGradient() {
+      const stops = document.querySelectorAll('#logo-gradient stop');
+      const colors = ['#FF00FF', '#00FFFF', '#FFFF00', '#FF0000'];
+      let index = 0;
+
+      setInterval(() => {
+        stops[0].setAttribute('stop-color', colors[index]);
+        stops[1].setAttribute('stop-color', colors[(index + 1) % colors.length]);
+        index = (index + 1) % colors.length;
+      }, 1000);
+    }
+
+    // JavaScript to redirect to "index.html" after loading
+    setTimeout(function() {
+      window.location.href = 'index2.html';
+    }, 4500);
+
+    // Call the updateGradient function when the page finishes loading
+    window.addEventListener('load', updateGradient);
+  </script>
+</head>
+<body>
+  <svg class="logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <defs>
+      <linearGradient id="logo-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#FF00FF" />
+        <stop offset="100%" stop-color="#FF0000" />
+      </linearGradient>
+    </defs>
+    <path d="M9 7v10h2v-4h.8l1.2 4h2l-1.24-4.15C14.5 12.55 15 11.84 15 11V9a2 2 0 0 0-2-2H9m2 2h2v2h-2V9m1-7a10 10 0 0 1 10 10a10 10 0 0 1-10 10A10 10 0 0 1 2 12A10 10 0 0 1 12 2Z" />
+  </svg>
+</body>
+</html>
